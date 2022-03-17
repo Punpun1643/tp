@@ -1,10 +1,21 @@
 package seedu.address.ui;
 
+import java.util.Comparator;
+
+import javax.swing.text.LabelView;
+
 import javafx.fxml.FXML;
+import javafx.geometry.Orientation;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
+import javafx.scene.control.TitledPane;
+import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Region;
 import seedu.address.model.group.Group;
+import seedu.address.model.person.Person;
+import seedu.address.model.task.Task;
+import seedu.address.model.task.UniqueTaskList;
 
 /**
  * A UI component that displays information of a {@code Group}.
@@ -21,6 +32,12 @@ public class GroupCard extends UiPart<Region> {
     private Label groupName;
     @FXML
     private Label id;
+    @FXML
+    private FlowPane taskName;
+    @FXML
+    private Label taskId;
+    @FXML
+    private Label taskTitle;
 
     /**
      * Creates a {@code GroupCode} with the given {@code Group} and index to display.
@@ -30,6 +47,13 @@ public class GroupCard extends UiPart<Region> {
         this.group = group;
         id.setText(displayedIndex + ". ");
         groupName.setText(group.getGroupName().groupName);
+        taskTitle.setText("Task List:");
+
+        UniqueTaskList taskList = group.getTaskList();
+
+        group.getTaskList().getInternalList().stream()
+                .sorted(Comparator.comparing(task -> task.taskName.taskName))
+                .forEach(task -> taskName.getChildren().add(new Label(task.taskName.taskName)));
     }
 
     @Override
