@@ -2,19 +2,12 @@ package seedu.address.ui;
 
 import java.util.Comparator;
 
-import javax.swing.text.LabelView;
-
 import javafx.fxml.FXML;
-import javafx.geometry.Orientation;
 import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TitledPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Region;
 import seedu.address.model.group.Group;
-import seedu.address.model.person.Person;
-import seedu.address.model.task.Task;
 import seedu.address.model.task.UniqueTaskList;
 
 /**
