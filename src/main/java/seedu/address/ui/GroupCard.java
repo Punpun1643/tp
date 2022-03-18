@@ -8,7 +8,6 @@ import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Region;
 import seedu.address.model.group.Group;
-import seedu.address.model.task.UniqueTaskList;
 
 /**
  * A UI component that displays information of a {@code Group}.
@@ -41,8 +40,6 @@ public class GroupCard extends UiPart<Region> {
         id.setText(displayedIndex + ". ");
         groupName.setText(group.getGroupName().groupName);
         taskTitle.setText("Task List:");
-
-        UniqueTaskList taskList = group.getTaskList();
 
         group.getTaskList().getInternalList().stream()
                 .sorted(Comparator.comparing(task -> task.taskName.taskName))
