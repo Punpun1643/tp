@@ -397,6 +397,7 @@ Result of viewing task in the group NUS Fintech Society:
 
 ![](images/ViewtaskResult.png)
 
+
 --------------------------------------------------------------------------------------------------------------------
 
 ## FAQ
